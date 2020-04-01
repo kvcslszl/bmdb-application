@@ -21,68 +21,46 @@ public final class Actor {
 	public void addToFilmography(Media media) {
 		this.filmography.add(media);
 	}
-	
-	
 
 	public String getName() {
 		return this.name;
 	}
 
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
 
 	public LocalDate getBorn() {
 		return this.born;
 	}
 
-
-
 	public void setBorn(LocalDate born) {
 		this.born = born;
 	}
-
-
 
 	public Sex getSex() {
 		return this.sex;
 	}
 
-
-
 	public void setSex(Sex sex) {
 		this.sex = sex;
 	}
-
-
 
 	public String getBiography() {
 		return this.biography;
 	}
 
-
-
 	public void setBiography(String biography) {
 		this.biography = biography;
 	}
-
-
 
 	public ArrayList<Media> getFilmography() {
 		return this.filmography;
 	}
 
-
-
 	public void setFilmography(ArrayList<Media> filmography) {
 		this.filmography = filmography;
 	}
-
-
 
 	@Override
 	public String toString() {

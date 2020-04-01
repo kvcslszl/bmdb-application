@@ -14,7 +14,7 @@ public class ReviewBuilder {
 	public ReviewBuilder( ) {
 	}
 	
-	public ReviewBuilder setName(String text) {
+	public ReviewBuilder setText(String text) {
 		this.text = text;
 		return this;
 	}

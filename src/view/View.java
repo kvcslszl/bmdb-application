@@ -34,7 +34,7 @@ public class View {
 	}
 	
 	public void printWelcomeMessage() {
-		System.out.println("> Welcome to the movie and series review application!");
+		System.out.println("> Welcome to the movie and series reviews application!");
 	}
 	
 	public void printMedias() {

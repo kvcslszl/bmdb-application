@@ -3,13 +3,13 @@ package domain;
 public class Review {
 	String text;
 	User writer;
-	Media subject;
+	Media media;
 	Rating type;
 	
 	public Review(String text, User writer, Media subject, Rating type) {
 		this.text = text;
 		this.writer = writer;
-		this.subject = subject;
+		this.media = subject;
 		this.type = type;
 	}
 
@@ -30,11 +30,11 @@ public class Review {
 	}
 
 	public Media getSubject() {
-		return this.subject;
+		return this.media;
 	}
 
 	public void setSubject(Media subject) {
-		this.subject = subject;
+		this.media = subject;
 	}
 
 	public Rating getType() {

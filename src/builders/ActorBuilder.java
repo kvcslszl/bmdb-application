@@ -33,8 +33,13 @@ public final class ActorBuilder {
 		return this;
 	}
 
-	public ActorBuilder setSex(Sex sex) {
-		this.sex = sex;
+	public ActorBuilder setIsFemale() {
+		this.sex = Sex.FEMALE;
+		return this;
+	}
+
+	public ActorBuilder setIsMale() {
+		this.sex = Sex.MALE;
 		return this;
 	}
 

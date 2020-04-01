@@ -50,12 +50,4 @@ public class App {
 	public void printReviewAverage() {
 		
 	}
-	
-	public void testDataGenerator() {
-		MediaBuilder mediaBuilder = new MediaBuilder();
-		ActorBuilder actorBuilder = new ActorBuilder();
-		ReviewBuilder reviewBuilder = new ReviewBuilder();
-		UserBuilder userBuilder = new UserBuilder();
-		// ...
-	}
 }
