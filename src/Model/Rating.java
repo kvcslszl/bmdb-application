@@ -10,7 +10,7 @@ public enum Rating {
         this.rate=rate;
     }
 
-	private static final Map<Rating, Integer> BY_RATE=new HashMap<>();
+	private static final Map<Rating, Integer> BY_RATE = new HashMap<>();
     static{
         for(Rating r: values()){
             BY_RATE.put(r, r.rate);

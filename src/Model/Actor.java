@@ -11,12 +11,11 @@ public final class Actor {
 	ArrayList<Media> Filmography;
 	
 	public Actor(String name, LocalDate born, Model.Sex sex, String biography, ArrayList<Media> filmography) {
-		super();
-		Name = name;
-		Born = born;
-		Sex = sex;
-		Biography = biography;
-		Filmography = filmography;
+		this.Name = name;
+		this.Born = born;
+		this.Sex = sex;
+		this.Biography = biography;
+		this.Filmography = filmography;
 	}
 	
 	public void addToFilmography(Media media) {
@@ -26,13 +25,13 @@ public final class Actor {
 	
 
 	public String getName() {
-		return Name;
+		return this.Name;
 	}
 
 
 
 	public void setName(String name) {
-		Name = name;
+		this.Name = name;
 	}
 
 

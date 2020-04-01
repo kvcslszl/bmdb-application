@@ -9,18 +9,16 @@ public class Media {
 	String Title;
 	String Description;
 	LocalDate Premier;
-	ArrayList<Review> Reviews;
-	ArrayList<Actor> Cast;
+	private ArrayList<Review> Reviews;
+	private ArrayList<Actor> Cast;
 	
-	public Media(BigDecimal id, String title, String description, LocalDate premier, ArrayList<Review> reviews,
-			ArrayList<Actor> cast) {
-		super();
-		Id = id;
-		Title = title;
-		Description = description;
-		Premier = premier;
-		Reviews = reviews;
-		Cast = cast;
+	public Media(BigDecimal id, String title, String description, LocalDate premier) {
+		this.Id = id;
+		this.Title = title;
+		this.Description = description;
+		this.Premier = premier;
+		this.Reviews = new ArrayList<Review>();
+		this.Cast = new ArrayList<Actor>();
 	}
 	
 	public void addToCast(Actor actor) {

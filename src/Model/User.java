@@ -9,16 +9,10 @@ public final class User {
 	ArrayList<Review> Reviews;
 	
 	public User(String name, String email, String password, ArrayList<Review> reviews) {
-		super();
 		Name = name;
 		Email = email;
 		Password = password;
 		Reviews = reviews;
-	}
-	
-	public void addReview(Review review) {
-		this.Reviews.add(review);
-		review.Writer = this;
 	}
 
 	public String getName() {
@@ -51,5 +45,10 @@ public final class User {
 
 	public void setReviews(ArrayList<Review> reviews) {
 		Reviews = reviews;
+	}
+	
+	public void addReview(Review review) {
+		this.Reviews.add(review);
+		review.Writer = this;
 	}
 }

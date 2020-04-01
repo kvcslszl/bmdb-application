@@ -7,7 +7,6 @@ public class Review {
 	Rating Type;
 	
 	public Review(String text, User writer, Media subject, Rating type) {
-		super();
 		Text = text;
 		Writer = writer;
 		Subject = subject;
