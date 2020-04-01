@@ -1,53 +1,53 @@
-package Model;
+package domain;
 
 public class Review {
-	String Text;
-	User Writer;
-	Media Subject;
-	Rating Type;
+	String text;
+	User writer;
+	Media subject;
+	Rating type;
 	
 	public Review(String text, User writer, Media subject, Rating type) {
-		Text = text;
-		Writer = writer;
-		Subject = subject;
-		Type = type;
+		this.text = text;
+		this.writer = writer;
+		this.subject = subject;
+		this.type = type;
 	}
 
 	public String getText() {
-		return Text;
+		return this.text;
 	}
 
 	public void setText(String text) {
-		Text = text;
+		this.text = text;
 	}
 
 	public User getWriter() {
-		return Writer;
+		return this.writer;
 	}
 
 	public void setWriter(User writer) {
-		Writer = writer;
+		this.writer = writer;
 	}
 
 	public Media getSubject() {
-		return Subject;
+		return this.subject;
 	}
 
 	public void setSubject(Media subject) {
-		Subject = subject;
+		this.subject = subject;
 	}
 
 	public Rating getType() {
-		return Type;
+		return this.type;
 	}
 
 	public void setType(Rating type) {
-		Type = type;
+		this.type = type;
 	}
 
 	@Override
 	public String toString() {
-		return "'" + Text + "'\n rating=" + Type + "\n";
+		return "'" + text + "'\n rating=" + type + "\n";
 	}
 	
 }

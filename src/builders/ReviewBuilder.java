@@ -1,42 +1,42 @@
-package Builders;
+package builders;
 
-import Model.Media;
-import Model.Rating;
-import Model.Review;
-import Model.User;
+import domain.Media;
+import domain.Rating;
+import domain.Review;
+import domain.User;
 
 public class ReviewBuilder {
-	String Text;
-	User Writer;
-	Media Subject;
-	Rating Type;
+	String text;
+	User writer;
+	Media subject;
+	Rating type;
 	
 	public ReviewBuilder( ) {
 	}
 	
 	public ReviewBuilder setName(String text) {
-		this.Text = text;
+		this.text = text;
 		return this;
 	}
 	
 	public ReviewBuilder setWriter(User writer) {
-		this.Writer = writer;
+		this.writer = writer;
 		writer.addReview(getReview());
 		return this;
 	}
 	
 	public ReviewBuilder setSubject(Media subject) {
-		this.Subject = subject;
+		this.subject = subject;
 		subject.addReview(getReview());
 		return this;
 	}
 	
 	public ReviewBuilder setType(Rating score) {
-		this.Type = score;
+		this.type = score;
 		return this;
 	}
 	
 	public Review getReview() {
-		return new Review(Text, Writer, Subject, Type);
+		return new Review(text, writer, subject, type);
 	}
 }

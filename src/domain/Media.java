@@ -1,86 +1,86 @@
-package Model;
+package domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Media {
-	BigDecimal Id;
-	String Title;
-	String Description;
-	LocalDate Premier;
-	private ArrayList<Review> Reviews;
-	private ArrayList<Actor> Cast;
+	BigDecimal id;
+	String title;
+	String description;
+	LocalDate premier;
+	private ArrayList<Review> reviews;
+	private ArrayList<Actor> cast;
 	
 	public Media(BigDecimal id, String title, String description, LocalDate premier) {
-		this.Id = id;
-		this.Title = title;
-		this.Description = description;
-		this.Premier = premier;
-		this.Reviews = new ArrayList<Review>();
-		this.Cast = new ArrayList<Actor>();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.premier = premier;
+		this.reviews = new ArrayList<Review>();
+		this.cast = new ArrayList<Actor>();
 	}
 	
 	public void addToCast(Actor actor) {
-		this.Cast.add(actor);
-		actor.Filmography.add(this);
+		this.cast.add(actor);
+		actor.filmography.add(this);
 	}
-	
+
 	public void addReview(Review review) {
-		this.Reviews.add(review);
+		this.reviews.add(review);
 	}
 
 	public BigDecimal getId() {
-		return Id;
+		return this.id;
 	}
 
 	public void setId(BigDecimal id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getTitle() {
-		return Title;
+		return this.title;
 	}
 
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
 
 	public String getDescription() {
-		return Description;
+		return this.description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
 	public LocalDate getPremier() {
-		return Premier;
+		return this.premier;
 	}
 
 	public void setPremier(LocalDate premier) {
-		Premier = premier;
+		this.premier = premier;
 	}
 
 	public ArrayList<Review> getReviews() {
-		return Reviews;
+		return this.reviews;
 	}
 
 	public void setReviews(ArrayList<Review> reviews) {
-		Reviews = reviews;
+		this.reviews = reviews;
 	}
 
 	public ArrayList<Actor> getCast() {
-		return Cast;
+		return this.cast;
 	}
 
 	public void setCast(ArrayList<Actor> cast) {
-		Cast = cast;
+		this.cast = cast;
 	}
 	
 	@Override
 	public String toString() {
-		return ">'" + Title + "'\\nDescription=" + Description + "'\nPremier=" + Premier + "\\nCast=" + Cast + 
-				", Reviews=" + Reviews + "]";
+		return ">'" + title + "'\\nDescription=" + description + "'\nPremier=" + premier + "\\nCast=" + cast + 
+				", reviews=" + reviews + "]";
 	}
 }

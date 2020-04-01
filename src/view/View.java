@@ -1,12 +1,12 @@
-package App;
+package view;
 
 import java.util.Scanner;
 
-import App.App;
-import Builders.UserBuilder;
-import Model.User;
-import Model.Media;
-import Model.Review;
+import app.App;
+import builders.UserBuilder;
+import domain.Media;
+import domain.Review;
+import domain.User;
 
 public class View {
 	

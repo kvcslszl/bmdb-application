@@ -1,49 +1,49 @@
-package Builders;
+package builders;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import Model.Actor;
-import Model.Media;
-import Model.Sex;
+import domain.Actor;
+import domain.Media;
+import domain.Sex;
 
 public final class ActorBuilder {
-	String Name;
-	LocalDate Born;
-	Sex Sex;
-	String Biography;
-	ArrayList<Media> Filmography;
+	String name;
+	LocalDate born;
+	Sex sex;
+	String biography;
+	ArrayList<Media> filmography;
 	
 	public ActorBuilder() { 
-		this.Filmography = new ArrayList<Media>();	
+		this.filmography = new ArrayList<Media>();	
 	}
 	
 	public ActorBuilder addFilm(Media media) {
-		this.Filmography.add(media);
+		this.filmography.add(media);
 		return this;
 	}
 
 	public ActorBuilder setName(String name) {
-		this.Name = name;
+		this.name = name;
 		return this;
 	}
 
 	public ActorBuilder setBirth(LocalDate birthDate) {
-		this.Born = birthDate;
+		this.born = birthDate;
 		return this;
 	}
 
 	public ActorBuilder setSex(Sex sex) {
-		this.Sex = sex;
+		this.sex = sex;
 		return this;
 	}
 
 	public ActorBuilder setBiography(String bio) {
-		this.Biography = bio;
+		this.biography = bio;
 		return this;
 	}
 	
 	public Actor getActor() {
-		return new Actor(Name, Born, Sex, Biography, Filmography);
+		return new Actor(name, born, sex, biography, filmography);
 	}
 }

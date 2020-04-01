@@ -1,10 +1,10 @@
-package App;
+package service;
 
 import java.util.ArrayList;
 
-import Model.Media;
-import Model.Review;
-import Model.User;
+import domain.Media;
+import domain.Review;
+import domain.User;
 
 public class Service {
 

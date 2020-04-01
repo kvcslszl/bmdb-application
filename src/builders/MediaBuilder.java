@@ -1,59 +1,59 @@
-package Builders;
+package builders;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import Model.Actor;
-import Model.Media;
-import Model.Review;
+import domain.Actor;
+import domain.Media;
+import domain.Review;
 
 public class MediaBuilder {
-	BigDecimal Id;
-	String Title;
-	String Description;
-	LocalDate Premier;
-	ArrayList<Review> Reviews;
-	ArrayList<Actor> Cast;
+	BigDecimal id;
+	String title;
+	String description;
+	LocalDate premier;
+	ArrayList<Review> reviews;
+	ArrayList<Actor> cast;
 	
 	public MediaBuilder() {
-		this.Reviews = new ArrayList<Review>();
-		this.Cast = new ArrayList<Actor>();
+		this.reviews = new ArrayList<Review>();
+		this.cast = new ArrayList<Actor>();
 	}
 	
 	public MediaBuilder addReview(Review review) {
-		this.Reviews.add(review);
+		this.reviews.add(review);
 		return this;
 	}
 	
 	public MediaBuilder addActor(Actor actor) {
-		this.Cast.add(actor);
+		this.cast.add(actor);
 		actor.addToFilmography(this.getMedia());
 		return this;
 	}
 	
 	public MediaBuilder setId(BigDecimal id) {
-		this.Id = id;
+		this.id = id;
 		return this;
 	}
 	
 	public MediaBuilder setTitle(String title) {
-		this.Title = title;
+		this.title = title;
 		return this;
 	}
 	
 	public MediaBuilder setDescription(String description) {
-		this.Description = description;
+		this.description = description;
 		return this;
 	}
 	
 	public MediaBuilder setPremier(LocalDate premiere) {
-		this.Premier = premiere;
+		this.premier = premiere;
 		return this;
 	}
 	
 	public Media getMedia() {
-		return new Media(Id, Title, Description, Premier);
+		return new Media(id, title, description, premier);
 	}
 
 }

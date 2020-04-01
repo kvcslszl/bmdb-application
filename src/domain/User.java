@@ -1,54 +1,54 @@
-package Model;
+package domain;
 
 import java.util.ArrayList;
 
 public final class User {
-	String Name;
-	String Email;
-	String Password;
-	ArrayList<Review> Reviews;
+	String name;
+	String email;
+	String password;
+	ArrayList<Review> reviews;
 	
 	public User(String name, String email, String password, ArrayList<Review> reviews) {
-		Name = name;
-		Email = email;
-		Password = password;
-		Reviews = reviews;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.reviews = reviews;
 	}
 
 	public String getName() {
-		return Name;
+		return this.name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getEmail() {
-		return Email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getPassword() {
-		return Password;
+		return this.password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 
 	public ArrayList<Review> getReviews() {
-		return Reviews;
+		return this.reviews;
 	}
 
 	public void setReviews(ArrayList<Review> reviews) {
-		Reviews = reviews;
+		this.reviews = reviews;
 	}
 	
 	public void addReview(Review review) {
-		this.Reviews.add(review);
-		review.Writer = this;
+		this.reviews.add(review);
+		review.writer = this;
 	}
 }

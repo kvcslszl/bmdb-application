@@ -1,12 +1,14 @@
-package App;
+package app;
 import java.util.ArrayList;
 
-import Builders.MediaBuilder;
-import Builders.ReviewBuilder;
-import Builders.UserBuilder;
-import Builders.ActorBuilder;
-import Model.Media;
-import Model.Review;;
+import builders.ActorBuilder;
+import builders.MediaBuilder;
+import builders.ReviewBuilder;
+import builders.UserBuilder;
+import domain.Media;
+import domain.Review;
+import service.Service;
+import view.View;;
 
 public class App {
 	

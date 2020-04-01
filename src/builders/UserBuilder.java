@@ -1,42 +1,42 @@
-package Builders;
+package builders;
 
 import java.util.ArrayList;
 
-import Model.Review;
-import Model.User;
+import domain.Review;
+import domain.User;
 
 public class UserBuilder {
-	String Name;
-	String Email;
-	String Password;
-	ArrayList<Review> Reviews;
+	String name;
+	String email;
+	String password;
+	ArrayList<Review> reviews;
 	
 	public UserBuilder() {
-		this.Reviews = new ArrayList<Review>();
+		this.reviews = new ArrayList<Review>();
 	}
 	
 	public UserBuilder addReview(Review review) {
-		this.Reviews.add(review);
+		this.reviews.add(review);
 		return this;
 	}
 	
 	public UserBuilder setName(String name) {
-		this.Name = name;
+		this.name = name;
 		return this;
 	}
 	
 	public UserBuilder setEmail(String email) {
-		this.Email= email;
+		this.email= email;
 		return this;
 	}
 	
 	public UserBuilder setPassword(String pw) {
-		this.Password = pw;
+		this.password = pw;
 		return this;
 	}
 
 	public User getUser() {
-		return new User(Name, Email, Password, Reviews);
+		return new User(name, email, password, reviews);
 	}
 	
 
