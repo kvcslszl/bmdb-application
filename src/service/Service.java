@@ -2,10 +2,6 @@ package service;
 
 import java.util.ArrayList;
 
-import builders.ActorBuilder;
-import builders.MediaBuilder;
-import builders.ReviewBuilder;
-import builders.UserBuilder;
 import domain.Media;
 import domain.Review;
 import domain.User;
@@ -17,27 +13,41 @@ public class Service {
 	private ArrayList<User> users;
 	
 	public Service() {
-		this.medias = new 
+		TestData data = new TestData();
+		this.medias = data.getMedias();
+		this.reviews = data.getReviews();
+		this.users = data.getUsers();
 	}
 	
 	public void saveUser(User user) {
-		
+		this.users.add(user);
 	}
-	/*
-	public User findUser() {
-		
+	
+	User findUser(String name) {
+		for (User user : this.users) {
+			if(user.getName() == name) return user;
+		}
+		return null;
 	}
 	
 	public ArrayList<Media> findAllMedia() {
-		
+		return this.medias;
 	}
 	
-	public void saveReview(Review reviews) {
-		
+	public void saveReview(Review review) {
+		review.getSubject().addReview(review);
+		this.reviews.add(review);
 	}
 	
-	public ArrayList<Review> findAllReview(){
-		
-	}*/
+	ArrayList<Review> findAllReview(){
+		return this.reviews;
+	}
 	
+	User Login(String name, String password) {
+		for(User user : this.users) {
+			if(user.getName() == name && user.getPassword() == password)
+				return user;
+		}
+		return null;
+	}
 }

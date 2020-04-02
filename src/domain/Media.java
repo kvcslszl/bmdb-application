@@ -12,13 +12,13 @@ public class Media {
 	private ArrayList<Review> reviews;
 	private ArrayList<Actor> cast;
 	
-	public Media(BigDecimal id, String title, String description, LocalDate premier) {
+	public Media(BigDecimal id, String title, String description, LocalDate premier, ArrayList<Actor> cast, ArrayList<Review> reviews) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.premier = premier;
-		this.reviews = new ArrayList<Review>();
-		this.cast = new ArrayList<Actor>();
+		this.cast = cast;
+		this.reviews = reviews;
 	}
 	
 	public void addToCast(Actor actor) {
@@ -80,7 +80,16 @@ public class Media {
 	
 	@Override
 	public String toString() {
-		return ">'" + title + "'\\nDescription=" + description + "'\nPremier=" + premier + "\\nCast=" + cast + 
-				", reviews=" + reviews + "]";
+		String output = String.format("%d:'%s' \nDescription:='%s'\nPremier=%tD\nCast:\n",
+				id.intValue(), title, description, premier);
+		for(Actor actor : this.cast) {
+			output += "a " + actor.toString();
+		}
+		output += "\nSIZE:" + cast.size() + "\n";
+		output += "Reviews=\n";
+		for(Review review : reviews) {
+			output += review.toString();
+		}
+		return output;
 	}
 }

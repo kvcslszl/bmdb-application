@@ -4,7 +4,7 @@ public class Review {
 	String text;
 	User writer;
 	Media media;
-	Rating type;
+	public Rating type;
 	
 	public Review(String text, User writer, Media subject, Rating type) {
 		this.text = text;
@@ -47,7 +47,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "'" + text + "'\n rating=" + type + "\n";
+		return String.format("\t%s: '%s' \nrating=%s\n", writer.name, text, type);
 	}
 	
 }

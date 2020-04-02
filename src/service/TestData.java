@@ -37,8 +37,8 @@ public class TestData {
 		
 		this.generateActors();
 		this.generateMedias();
-		this.generateReviews();
 		this.generateUsers();
+		this.generateReviews();
 	}
 	
 	public ArrayList<Actor> getActors() {
@@ -99,6 +99,20 @@ public class TestData {
 				.setDescription("'The surviving members of the resistance face the First Order once again, and the "
 				+ "legendary conflict between the Jedi and the Sith reaches its peak bringing the Skywalker "
 				+ "saga to its end.").setPremier(LocalDate.of(2019, 12, 19)).getMedia());
+		//temp.addToCast(actors.get(2));
+		//temp.addToCast(actors.get(3));
+		//temp.addToCast(actors.get(4));
+		//medias.add(temp);
+		/*
+		medias.add(mediaBuilder.setId(new BigDecimal(1)).setTitle("Chernobyl").setDescription("In April 1986, "
+				+ "an explosion at the Chernobyl nuclear power plant in the Union of Soviet Socialist Republics "
+				+ "becomes one of the world's worst man-made catastrophes.")
+				.setPremier(LocalDate.of(2019, 5, 7)).addActor(actors.get(0)).addActor(actors.get(1)).getMedia());
+		medias.add(mediaBuilder.setId(new BigDecimal(2)).setTitle("Star Wars: Episode IX - The Rise of Skywalker")
+				.setDescription("'The surviving members of the resistance face the First Order once again, and the "
+				+ "legendary conflict between the Jedi and the Sith reaches its peak bringing the Skywalker "
+				+ "saga to its end.").setPremier(LocalDate.of(2019, 12, 19)).addActor(actors.get(2))
+				.addActor(actors.get(3)).addActor(actors.get(4)).getMedia());*/
 		medias.add(mediaBuilder.setId(new BigDecimal(3)).setTitle("Ford v Ferrari").setDescription("American car "
 				+ "designer Carroll Shelby and driver Ken Miles battle corporate interference, the laws of physics "
 				+ "and their own personal demons to build a revolutionary race car for Ford and challenge Ferrari "
@@ -106,6 +120,17 @@ public class TestData {
 		medias.add(mediaBuilder.setId(new BigDecimal(4)).setTitle("Inception").setDescription("A thief who steals "
 				+ "corporate secrets through the use of dream-sharing technology is given the inverse task of planting "
 				+ "an idea into the mind of a C.E.O.").setPremier(LocalDate.of(2010, 7, 16)).getMedia());
+		
+		medias.get(0).addToCast(actors.get(0));
+		medias.get(0).addToCast(actors.get(1));
+		medias.get(1).addToCast(actors.get(2));
+		medias.get(1).addToCast(actors.get(3));
+		medias.get(1).addToCast(actors.get(4));
+		medias.get(2).addToCast(actors.get(5));
+		medias.get(2).addToCast(actors.get(6));
+		medias.get(3).addToCast(actors.get(7));
+		medias.get(3).addToCast(actors.get(8));
+		medias.get(3).addToCast(actors.get(9));
 	}
 
 	private void generateUsers() {
@@ -118,21 +143,20 @@ public class TestData {
 	}
 
 	private void generateReviews() {
-		reviews.add(reviewBuilder.setWriter(users.get(3)).setSubject(medias.get(1)).setType(Rating.GOOD)
+		reviews.add(reviewBuilder.setWriter(users.get(2)).setSubject(medias.get(0)).setType(Rating.GOOD)
 				.setText("I'm Russian. Amazing work! Newer, you hear this, never ever before western cinematography"
 						+ " made such authentic film. I speak about details: cars, kitchens, clothes...").getReview());
-		reviews.add(reviewBuilder.setWriter(users.get(1)).setSubject(medias.get(2)).setType(Rating.BAD)
+		reviews.add(reviewBuilder.setWriter(users.get(1)).setSubject(medias.get(1)).setType(Rating.BAD)
 				.setText("As a long time SW fan, this is just sad.").getReview());
-		reviews.add(reviewBuilder.setWriter(users.get(3)).setSubject(medias.get(3)).setType(Rating.AVERAGE)
-				.setText("CARS GO FAST VROOM VROOM!!!").getReview());
 		reviews.add(reviewBuilder.setWriter(users.get(2)).setSubject(medias.get(2)).setType(Rating.AVERAGE)
+				.setText("CARS GO FAST VROOM VROOM!!!").getReview());
+		reviews.add(reviewBuilder.setWriter(users.get(0)).setSubject(medias.get(1)).setType(Rating.AVERAGE)
 				.setText("I was meant to watch the new Fast & Furious movie so this waas definiately a stepup").getReview());
-		reviews.add(reviewBuilder.setWriter(users.get(1)).setSubject(medias.get(4)).setType(Rating.GOOD)
-				.setText("Why are you reading a review just go watch it (again)!!!").getReview());
-		reviews.add(reviewBuilder.setWriter(users.get(1)).setSubject(medias.get(1)).setType(Rating.AVERAGE)
+		reviews.add(reviewBuilder.setWriter(users.get(1)).setSubject(medias.get(3)).setType(Rating.GOOD)
+				.setText("Why are you reading a review just go watch the damn movie (again)!!!").getReview());
+		reviews.add(reviewBuilder.setWriter(users.get(1)).setSubject(medias.get(0)).setType(Rating.AVERAGE)
 				.setText("I dont speak a single word of english but just the visuals were enough to give me a semi :)").getReview());
-		reviews.add(reviewBuilder.setWriter(users.get(2)).setSubject(medias.get(3)).setType(Rating.GOOD)
+		reviews.add(reviewBuilder.setWriter(users.get(0)).setSubject(medias.get(2)).setType(Rating.GOOD)
 				.setText("JUST GIVE DICAPRIO HIS OSCAR ALREADY!!!").getReview());
 	}
-	
 }

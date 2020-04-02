@@ -53,7 +53,8 @@ public class MediaBuilder {
 	}
 	
 	public Media getMedia() {
-		return new Media(id, title, description, premier);
+		Media med =  new Media(id, title, description, premier, cast, reviews);
+		return med;
 	}
 
 }

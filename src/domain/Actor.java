@@ -64,6 +64,6 @@ public final class Actor {
 
 	@Override
 	public String toString() {
-		return "name= " + name + ", born=" + born;
+		return String.format("name= %s, born=%tD\n", name, born);
 	}
 }
